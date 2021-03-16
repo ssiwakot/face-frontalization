@@ -21,7 +21,7 @@ class ThreeD_Model:
 def frontalize(img, proj_matrix, ref_U, eyemask):
     ACC_CONST = 800
     img = img.astype('float32')
-    print "query image shape:", img.shape
+    print ("query image shape:", img.shape)
 
     bgind = np.sum(np.abs(ref_U), 2) == 0
     # count the number of times each pixel in the query is accessed
@@ -67,7 +67,7 @@ def frontalize(img, proj_matrix, ref_U, eyemask):
     frontal_raw = frontal_raw.reshape((320, 320, 3), order = 'F')
 
     # which side has more occlusions?
-    midcolumn = np.round(ref_U.shape[1]/2)
+    midcolumn = np.round(ref_U.shape[1]//2)
     sumaccs = synth_frontal_acc.sum(axis=0)
     sum_left = sumaccs[0:midcolumn].sum()
     sum_right = sumaccs[midcolumn+1:].sum()

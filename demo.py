@@ -20,7 +20,7 @@ def demo():
     # load detections performed by dlib library on 3D model and Reference Image
     model3D = frontalize.ThreeD_Model(this_path + "/frontalization_models/model3Ddlib.mat", 'model_dlib')
     # load query image
-    img = cv2.imread("test.jpg", 1)
+    img = cv2.imread("5.jpg", 1)
     plt.title('Query Image')
     plt.imshow(img[:, :, ::-1])
     # extract landmarks from the query image
